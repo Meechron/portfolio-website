@@ -130,20 +130,37 @@ projectCards.forEach(card => {
 
 const contactForm = document.querySelector('.contact-form');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Get form values
-    const name = contactForm.querySelector('input[type="text"]').value;
-    const email = contactForm.querySelector('input[type="email"]').value;
-    const message = contactForm.querySelector('textarea').value;
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
 
-    // For now, just show an alert
-    // Later, you can connect this to a real email service
-    alert(`Thank you for your message, ${name}! This is a demo form. To make it functional, you'll need to connect it to a backend service or email API.`);
+    // Show loading state
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
 
-    // Reset form
-    contactForm.reset();
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        alert('Oops! There was a problem sending your message. Please try again or email me directly.');
+    } finally {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    }
 });
 
 // ============================================
