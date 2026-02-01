@@ -1,7 +1,4 @@
-// ============================================
-// MOBILE MENU TOGGLE
-// ============================================
-
+// Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -10,7 +7,6 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
-// Close menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -18,10 +14,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// ============================================
-// SMOOTH SCROLLING FOR NAVIGATION
-// ============================================
-
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -35,10 +28,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ============================================
-// NAVBAR BACKGROUND ON SCROLL
-// ============================================
-
+// Navbar background on scroll
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
@@ -50,9 +40,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ============================================
-// SCROLL ANIMATIONS (Intersection Observer)
-// ============================================
+// Scroll animations
 
 const observerOptions = {
     threshold: 0.1,
@@ -68,7 +56,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections
 document.querySelectorAll('section').forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
@@ -76,10 +63,7 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// ============================================
-// SKILLS CARDS ANIMATION
-// ============================================
-
+// Skill cards animation
 const skillCards = document.querySelectorAll('.skill-card');
 
 const skillObserver = new IntersectionObserver((entries) => {
@@ -100,10 +84,7 @@ skillCards.forEach(card => {
     skillObserver.observe(card);
 });
 
-// ============================================
-// PROJECT CARDS ANIMATION
-// ============================================
-
+// Project cards animation
 const projectCards = document.querySelectorAll('.project-card');
 
 const projectObserver = new IntersectionObserver((entries) => {
@@ -124,10 +105,7 @@ projectCards.forEach(card => {
     projectObserver.observe(card);
 });
 
-// ============================================
-// CONTACT FORM HANDLING
-// ============================================
-
+// Contact form handling
 const contactForm = document.querySelector('.contact-form');
 
 contactForm.addEventListener('submit', async (e) => {
@@ -163,32 +141,7 @@ contactForm.addEventListener('submit', async (e) => {
     }
 });
 
-// ============================================
-// TYPING EFFECT (Optional Enhancement)
-// ============================================
-
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.textContent = '';
-
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-
-    type();
-}
-
-// You can use this function to add typing effect to any element
-// Example: typeWriter(document.querySelector('.home-content p'), 'A passionate developer building amazing things', 50);
-
-// ============================================
-// ACTIVE NAVIGATION LINK HIGHLIGHTING
-// ============================================
-
+// Active nav link highlighting
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -211,11 +164,3 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-
-// ============================================
-// CONSOLE MESSAGE (Easter Egg)
-// ============================================
-
-console.log('%c👋 Hello, fellow developer!', 'color: #6366f1; font-size: 20px; font-weight: bold;');
-console.log('%cLooking at the code? I like your curiosity!', 'color: #8b5cf6; font-size: 14px;');
-console.log('%cFeel free to reach out if you want to collaborate!', 'color: #6b7280; font-size: 12px;');

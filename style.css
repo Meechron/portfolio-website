@@ -1,7 +1,4 @@
-/* ============================================
-   RESET AND BASE STYLES
-   ============================================ */
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +6,6 @@
 }
 
 :root {
-    /* Color Scheme - Modern and Professional */
     --primary-color: #6366f1;
     --secondary-color: #8b5cf6;
     --text-dark: #1f2937;
@@ -38,10 +34,7 @@ body {
     padding: 0 20px;
 }
 
-/* ============================================
-   NAVIGATION BAR
-   ============================================ */
-
+/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -99,10 +92,7 @@ body {
     transition: 0.3s;
 }
 
-/* ============================================
-   HOME SECTION
-   ============================================ */
-
+/* Home section */
 .home {
     min-height: 100vh;
     display: flex;
@@ -185,10 +175,7 @@ body {
     text-decoration: none;
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
-
+/* About section */
 .about {
     padding: 100px 20px;
     background-color: var(--background);
@@ -263,10 +250,7 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-/* ============================================
-   EXPERIENCE SECTION
-   ============================================ */
-
+/* Experience section */
 .experience {
     padding: 100px 20px;
     background-color: var(--background);
@@ -393,10 +377,7 @@ body {
     font-weight: 500;
 }
 
-/* ============================================
-   SKILLS SECTION
-   ============================================ */
-
+/* Skills section */
 .skills {
     padding: 100px 20px;
     background-color: var(--background-alt);
@@ -439,10 +420,7 @@ body {
     font-size: 0.95rem;
 }
 
-/* ============================================
-   PROJECTS SECTION
-   ============================================ */
-
+/* Projects section */
 .projects {
     padding: 100px 20px;
     background-color: var(--background);
@@ -528,10 +506,7 @@ body {
     margin-right: 0.3rem;
 }
 
-/* ============================================
-   CONTACT SECTION
-   ============================================ */
-
+/* Contact section */
 .contact {
     padding: 100px 20px;
     background-color: var(--background-alt);
@@ -612,10 +587,7 @@ body {
     font-size: 1rem;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-
+/* Footer */
 .footer {
     background-color: var(--text-dark);
     color: white;
@@ -644,10 +616,7 @@ body {
     color: var(--primary-color);
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
-
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -676,10 +645,7 @@ body {
     animation: fadeInUp 0.8s ease forwards;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN (Mobile-friendly)
-   ============================================ */
-
+/* Mobile responsive */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
