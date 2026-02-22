@@ -1,125 +1,90 @@
-// Mobile menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// ── Hamburger menu ────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
 });
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
     });
 });
 
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+// ── Navbar scroll bg ─────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
-// Navbar scroll - add .scrolled class
-const navbar = document.querySelector('.navbar');
+// ── Active nav link ───────────────────────────────────────
+const sections  = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Scroll reveal animations
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-        }
-    });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -80px 0px'
-});
-
-// Apply reveal to sections
-document.querySelectorAll('section').forEach(section => {
-    section.classList.add('reveal');
-    revealObserver.observe(section);
-});
-
-// Apply staggered reveal to cards within grids
-document.querySelectorAll('.experience-grid, .skills-grid, .projects-grid').forEach(grid => {
-    grid.querySelectorAll('.experience-card, .skill-card, .project-card').forEach((card, i) => {
-        card.classList.add('reveal');
-        card.style.transitionDelay = `${i * 0.08}s`;
-        revealObserver.observe(card);
-    });
-});
-
-// Contact form handling
-const contactForm = document.querySelector('.contact-form');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-
-    submitButton.textContent = 'Sending...';
-    submitButton.disabled = true;
-
-    try {
-        const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: new FormData(contactForm),
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        } else {
-            throw new Error('Form submission failed');
-        }
-    } catch (error) {
-        alert('Oops! There was a problem sending your message. Please try again or email me directly.');
-    } finally {
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-    }
-});
-
-// Active nav link highlighting
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
     let current = '';
+    sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 160) current = sec.id;
+    });
+    navAnchors.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+}, { passive: true });
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
+// ── Scroll reveal ─────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
 
-        if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
+const io = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            // stagger siblings inside the same grid/list
+            const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+            let idx = 0;
+            siblings.forEach((el, j) => { if (el === entry.target) idx = j; });
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, idx * 70);
+            io.unobserve(entry.target);
         }
     });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+revealEls.forEach(el => io.observe(el));
+
+// ── Smooth scroll ─────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
+});
+
+// ── Contact form ──────────────────────────────────────────
+const form = document.querySelector('.contact-form');
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('button');
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Sending…';
+    btn.disabled = true;
+    try {
+        const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+        });
+        if (res.ok) { alert('Message sent! I\'ll get back to you soon.'); form.reset(); }
+        else throw new Error();
+    } catch {
+        alert('Something went wrong. Please email me directly.');
+    } finally {
+        btn.innerHTML = orig;
+        btn.disabled = false;
+    }
 });
