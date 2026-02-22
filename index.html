@@ -6,7 +6,7 @@
     <title>Amirkhan Mirzalimov — Electrical Engineering</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -53,10 +53,50 @@
                 <a href="#projects" class="btn-main">View Projects</a>
                 <a href="#contact" class="btn-outline">Get In Touch</a>
             </div>
+            <div class="hero-trust">
+                <div class="hero-trust-item">
+                    <strong>2</strong>
+                    <span>Industry Internships</span>
+                </div>
+                <div class="hero-trust-item">
+                    <strong>7+</strong>
+                    <span>Engineering Projects</span>
+                </div>
+                <div class="hero-trust-item">
+                    <strong>24h</strong>
+                    <span>Typical Reply Time</span>
+                </div>
+            </div>
+            <p class="hero-proof">Current focus: building a 4.5 kW student cluster for competition and advanced systems testing.</p>
         </div>
         <a href="#about" class="hero-scroll">
             <i class="fas fa-chevron-down"></i>
         </a>
+    </section>
+
+    <!-- SIGNAL -->
+    <section class="section signal">
+        <div class="container">
+            <div class="section-label">// why work with me</div>
+            <h2 class="section-heading">Engineering That Ships, Not Just Slides</h2>
+            <div class="signal-grid">
+                <article class="signal-card reveal">
+                    <div class="signal-icon"><i class="fas fa-gauge-high"></i></div>
+                    <h3>Execution Bias</h3>
+                    <p>I prioritize prototypes, validation, and measurable outputs so ideas become testable systems fast.</p>
+                </article>
+                <article class="signal-card reveal">
+                    <div class="signal-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Reliability Mindset</h3>
+                    <p>From power electronics to controls, I build with safety, repeatability, and diagnostics in mind.</p>
+                </article>
+                <article class="signal-card reveal">
+                    <div class="signal-icon"><i class="fas fa-people-arrows"></i></div>
+                    <h3>Cross-Team Communication</h3>
+                    <p>TA, internship, and team project experience means I can explain complex work clearly and collaborate well.</p>
+                </article>
+            </div>
+        </div>
     </section>
 
     <!-- ABOUT -->
@@ -305,7 +345,7 @@
                         <span>MATLAB</span><span>Data Automation</span><span>Statistical Analysis</span>
                     </div>
                     <div class="proj-links">
-                        <a href="https://github.com/Meechron/Network-Validation-Toolkit" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/Meechron/Network-Validation-Toolkit" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                         <span class="proj-date">Feb 2026</span>
                     </div>
                 </div>
@@ -319,7 +359,7 @@
                         <span>Python</span><span>Async Processing</span><span>FILM Interpolation</span>
                     </div>
                     <div class="proj-links">
-                        <a href="https://github.com/Meechron/VidGenAI" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/Meechron/VidGenAI" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                         <span class="proj-date">Feb 2026</span>
                     </div>
                 </div>
@@ -346,7 +386,7 @@
                         <span>Python</span><span>Machine Learning</span><span>Classification</span>
                     </div>
                     <div class="proj-links">
-                        <a href="https://github.com/Meechron/ML-Activity-Classifier" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/Meechron/ML-Activity-Classifier" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                         <span class="proj-date">Feb 2026</span>
                     </div>
                 </div>
@@ -400,6 +440,7 @@
             <div class="section-label">// contact</div>
             <h2 class="section-heading">Get In Touch</h2>
             <p class="contact-sub">Open to internships, research, and engineering opportunities.</p>
+            <p class="contact-assurance">If your role involves embedded systems, automation, or hardware validation, include a short brief and timeline for a faster response.</p>
             <div class="contact-grid">
                 <div class="contact-left">
                     <a href="mailto:amirkhan22888@gmail.com" class="contact-link">
@@ -416,14 +457,14 @@
                             <div class="contact-link-value">(437) 258-6220</div>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/amir-mirzalimov/" target="_blank" class="contact-link">
+                    <a href="https://www.linkedin.com/in/amir-mirzalimov/" target="_blank" rel="noopener noreferrer" class="contact-link">
                         <div class="contact-link-icon"><i class="fab fa-linkedin"></i></div>
                         <div>
                             <div class="contact-link-label">LinkedIn</div>
                             <div class="contact-link-value">amir-mirzalimov</div>
                         </div>
                     </a>
-                    <a href="https://github.com/Meechron" target="_blank" class="contact-link">
+                    <a href="https://github.com/Meechron" target="_blank" rel="noopener noreferrer" class="contact-link">
                         <div class="contact-link-icon"><i class="fab fa-github"></i></div>
                         <div>
                             <div class="contact-link-label">GitHub</div>
@@ -441,7 +482,9 @@
                     <div class="form-row">
                         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
+                    <p class="form-note"><i class="fas fa-lock"></i> Your message is only used to reply and is never shared.</p>
                     <button type="submit">Send Message <i class="fas fa-arrow-right"></i></button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </div>
@@ -452,8 +495,8 @@
         <div class="container footer-inner">
             <span>&copy; 2026 Amirkhan Mirzalimov</span>
             <div class="footer-links">
-                <a href="https://github.com/Meechron" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/amir-mirzalimov/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Meechron" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/amir-mirzalimov/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:amirkhan22888@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>

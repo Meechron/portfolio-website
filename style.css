@@ -21,12 +21,14 @@
     --radius-sm:   8px;
     --radius-pill: 999px;
     --ease:        cubic-bezier(.4,0,.2,1);
+    --font-sans:   "Space Grotesk", "Segoe UI", sans-serif;
+    --font-mono:   "IBM Plex Mono", "Consolas", monospace;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-sans);
     background: var(--bg);
     color: var(--text-1);
     line-height: 1.6;
@@ -279,6 +281,46 @@ ul { list-style: none; }
     animation: fadeUp .6s var(--ease) .4s both;
 }
 
+.hero-trust {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    width: min(680px, 100%);
+    margin-top: 8px;
+    animation: fadeUp .6s var(--ease) .5s both;
+}
+
+.hero-trust-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.hero-trust-item strong {
+    color: var(--green-lt);
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-trust-item span {
+    color: var(--text-2);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.hero-proof {
+    max-width: 650px;
+    color: var(--text-2);
+    font-size: .92rem;
+    animation: fadeUp .6s var(--ease) .6s both;
+}
+
 .btn-main {
     background: var(--green);
     color: #0b0d0e;
@@ -344,7 +386,7 @@ ul { list-style: none; }
     letter-spacing: .1em;
     text-transform: uppercase;
     margin-bottom: 12px;
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-mono);
 }
 
 .section-heading {
@@ -369,6 +411,58 @@ ul { list-style: none; }
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: translateY(0); }
+}
+
+.signal {
+    position: relative;
+    overflow: hidden;
+}
+
+.signal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(500px 280px at 10% 20%, rgba(16,185,129,.11), transparent 65%),
+      radial-gradient(450px 280px at 90% 80%, rgba(16,185,129,.08), transparent 65%);
+    pointer-events: none;
+}
+
+.signal-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.signal-card {
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+}
+
+.signal-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--green);
+    background: var(--green-dim);
+}
+
+.signal-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.signal-card p {
+    color: var(--text-2);
+    font-size: .9rem;
 }
 
 /* ============================================================
@@ -805,6 +899,14 @@ ul { list-style: none; }
     margin-bottom: 48px;
 }
 
+.contact-assurance {
+    color: var(--text-3);
+    font-size: .9rem;
+    margin-top: -40px;
+    margin-bottom: 42px;
+    max-width: 760px;
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.4fr;
@@ -869,6 +971,18 @@ ul { list-style: none; }
     gap: 14px;
 }
 
+.form-note {
+    color: var(--text-3);
+    font-size: .77rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-note i {
+    color: var(--green);
+}
+
 .form-row input,
 .form-row textarea {
     width: 100%;
@@ -926,6 +1040,26 @@ input:-webkit-autofill {
 
 .contact-form button i { font-size: .8rem; }
 
+.contact-form button:disabled {
+    opacity: .75;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-status {
+    min-height: 1.1em;
+    font-size: .84rem;
+    font-weight: 500;
+}
+
+.form-status.success {
+    color: #5eead4;
+}
+
+.form-status.error {
+    color: #fca5a5;
+}
+
 /* ============================================================
    FOOTER
 ============================================================ */
@@ -966,6 +1100,7 @@ input:-webkit-autofill {
    RESPONSIVE
 ============================================================ */
 @media (max-width: 900px) {
+    .signal-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .about-stats {
         grid-template-columns: repeat(4, 1fr);
@@ -979,6 +1114,7 @@ input:-webkit-autofill {
     .nav-hamburger { display: flex; }
 
     .hero-name { font-size: clamp(2.8rem, 14vw, 4rem); }
+    .hero-trust { grid-template-columns: 1fr; max-width: 360px; }
 
     .about-stats { grid-template-columns: repeat(2, 1fr); }
 
