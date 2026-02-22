@@ -28,81 +28,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
+// Navbar scroll - add .scrolled class
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.backgroundColor = '#ffffff';
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.backgroundColor = '#ffffff';
+        navbar.classList.remove('scrolled');
     }
 });
 
-// Scroll animations
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
+// Scroll reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('revealed');
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -80px 0px'
+});
 
+// Apply reveal to sections
 document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
+    section.classList.add('reveal');
+    revealObserver.observe(section);
 });
 
-// Skill cards animation
-const skillCards = document.querySelectorAll('.skill-card');
-
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 100); // Stagger animation
-        }
+// Apply staggered reveal to cards within grids
+document.querySelectorAll('.experience-grid, .skills-grid, .projects-grid').forEach(grid => {
+    grid.querySelectorAll('.experience-card, .skill-card, .project-card').forEach((card, i) => {
+        card.classList.add('reveal');
+        card.style.transitionDelay = `${i * 0.08}s`;
+        revealObserver.observe(card);
     });
-}, observerOptions);
-
-skillCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    skillObserver.observe(card);
-});
-
-// Project cards animation
-const projectCards = document.querySelectorAll('.project-card');
-
-const projectObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 150); // Stagger animation
-        }
-    });
-}, observerOptions);
-
-projectCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    projectObserver.observe(card);
 });
 
 // Contact form handling
@@ -114,7 +75,6 @@ contactForm.addEventListener('submit', async (e) => {
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
 
-    // Show loading state
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
 
@@ -150,7 +110,6 @@ window.addEventListener('scroll', () => {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
 
         if (window.pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amirkhan Mirzalimov - Electrical Engineering Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -11,7 +14,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Amirkhan Mirzalimov</a>
+            <a href="#home" class="logo">AM</a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -30,9 +33,17 @@
 
     <!-- Home Section -->
     <section id="home" class="home">
+        <div class="hero-bg">
+            <div class="hero-grid-pattern"></div>
+            <div class="hero-gradient-orb hero-orb-1"></div>
+            <div class="hero-gradient-orb hero-orb-2"></div>
+        </div>
         <div class="home-content">
-            <h1 class="fade-in">Hello, I'm <span class="highlight">Amirkhan Mirzalimov</span></h1>
-            <p class="fade-in">Electrical Engineering Student | Electrical and Computer Engineering Enthusiast</p>
+            <p class="hero-greeting fade-in">Hi, my name is</p>
+            <h1 class="fade-in">Amirkhan<br><span class="highlight">Mirzalimov</span></h1>
+            <p class="hero-subtitle fade-in">Electrical Engineering Student<br>
+                <span class="text-muted">Embedded Systems &bull; Power Electronics &bull; Automation</span>
+            </p>
             <div class="home-buttons fade-in">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -45,6 +56,7 @@
 
     <!-- About Section -->
     <section id="about" class="about">
+        <div class="section-bg-pattern"></div>
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
@@ -53,11 +65,15 @@
                         Hi! I'm Amirkhan Mirzalimov, a third-year Electrical Engineering student at Queen's University with a passion for automation, embedded systems, and power electronics.
                     </p>
                     <p>
-                        I have hands-on experience from internships at Airbus Helicopters and ZDFlex, where I worked on IT systems, electrical panel design, and robotic automation. I'm also actively involved in Queen's Formula SAE and Queen's High Performance Computing, designing BMS and CAN network architectures and building 4.5 kW cluster.
+                        I have hands-on experience from internships at Airbus Helicopters and ZDFlex, where I worked on IT systems, electrical panel design, and robotic automation. I'm also actively involved in Queen's Formula SAE and Queen's High Performance Computing, designing BMS and CAN network architectures and building a 4.5 kW cluster.
                     </p>
                     <p>
                         My technical expertise spans from low-level embedded programming (Verilog, VHDL, C/C++) to high-level system design and automation (PLC, EPLAN P8, MATLAB). I love tackling complex engineering challenges and continuously expanding my skill set.
                     </p>
+                    <div class="about-coursework">
+                        <h3>Relevant Coursework</h3>
+                        <p>Signals & Systems, Embedded Systems, Control Systems, Data Analysis, C and Python Programming</p>
+                    </div>
                     <div class="about-info">
                         <div class="info-item">
                             <i class="fas fa-graduation-cap"></i>
@@ -90,118 +106,99 @@
     <section id="experience" class="experience">
         <div class="container">
             <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-briefcase"></i>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-card-header">
+                        <div class="experience-icon"><i class="fas fa-server"></i></div>
+                        <span class="experience-date">Jan 2026 - Present</span>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Automation Engineer Intern</h3>
-                            <span class="timeline-date">May 2025 - Aug 2025</span>
-                        </div>
-                        <h4>ZDFlex | Astana</h4>
-                        <ul>
-                            <li>Designed and assembled electrical panel for automated motherboard conveyor line in EPLAN Electric P8, including sensors, drives, and safety devices</li>
-                            <li>Collaborated with team on robotic assembly line, supported PLC wiring layout, sensor integration, and instrumentation setup using Ladder Logic</li>
-                            <li>Developed and validated functional test sequences for sensor–actuator networks, debugging wiring and signal issues</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span class="tech-tag">EPLAN P8</span>
-                            <span class="tech-tag">PLC</span>
-                            <span class="tech-tag">Ladder Logic</span>
-                            <span class="tech-tag">Automation</span>
-                        </div>
+                    <h3>Systems Architect</h3>
+                    <h4>Queen's High-Performance Computing</h4>
+                    <ul>
+                        <li>Building a 4.5 kW computer cluster for Student Cluster Competition</li>
+                        <li>Authored technical documentation for test procedures and system and network configurations</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HPC</span>
+                        <span class="tech-tag">Systems Design</span>
+                        <span class="tech-tag">Cluster Computing</span>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-briefcase"></i>
+                <div class="experience-card">
+                    <div class="experience-card-header">
+                        <div class="experience-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <span class="experience-date">Sep 2025 - Apr 2026</span>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>IT Specialist Intern</h3>
-                            <span class="timeline-date">May 2024 - Aug 2024</span>
-                        </div>
-                        <h4>Airbus Helicopters | Astana</h4>
-                        <ul>
-                            <li>Deployed tested and validated IP security camera system (15 units) performing functional verification, connectivity testing, and fault troubleshooting prior to operational handover</li>
-                            <li>Proposed canteen tracking system leveraging NFC badges and SQL backend using Python</li>
-                            <li>Evaluated security system performance, identified constraints, and documented findings and recommendations for system deployment</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Network Systems</span>
-                            <span class="tech-tag">NFC</span>
-                        </div>
+                    <h3>Teacher Assistant</h3>
+                    <h4>Queen's University | Kingston</h4>
+                    <ul>
+                        <li>Courses: ELEC 252 "Electronics I", APSC 200 "Engineering design"</li>
+                        <li>Led MATLAB lab sessions, troubleshooting scripts and guiding students in data analysis and circuit simulation</li>
+                        <li>Assisted students in electronics labs with circuit testing, measurement using oscilloscopes and multimeters, and debugging</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MATLAB</span>
+                        <span class="tech-tag">Circuit Analysis</span>
+                        <span class="tech-tag">Teaching</span>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                <div class="experience-card">
+                    <div class="experience-card-header">
+                        <div class="experience-icon"><i class="fas fa-briefcase"></i></div>
+                        <span class="experience-date">May 2025 - Aug 2025</span>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Teacher Assistant</h3>
-                            <span class="timeline-date">Sep 2025 - Apr 2026</span>
-                        </div>
-                        <h4>Queen's University | Kingston</h4>
-                        <ul>
-                            <li>Courses: ELEC 252 "Electronics I", APSC 200 "Engineering design"</li>
-                            <li>Guided 20+ students per week in MATLAB lab sessions, explained circuit analysis concepts in studios</li>
-                            <li>Assisted students in electronics labs with circuit testing, measurement using oscilloscopes and multimeters, and debugging</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span class="tech-tag">MATLAB</span>
-                            <span class="tech-tag">Circuit Analysis</span>
-                            <span class="tech-tag">Teaching</span>
-                        </div>
+                    <h3>Automation Engineer Intern</h3>
+                    <h4>ZDFlex | Astana</h4>
+                    <ul>
+                        <li>Designed and assembled electrical panel for automated motherboard conveyor line in EPLAN Electric P8, including sensors, drives, and safety devices</li>
+                        <li>Collaborated with team on robotic assembly line, supported PLC wiring layout, sensor integration, and instrumentation setup using Ladder Logic</li>
+                        <li>Developed automated test sequences for sensor-actuator networks, accelerating debugging and improving validation reliability</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">EPLAN P8</span>
+                        <span class="tech-tag">PLC</span>
+                        <span class="tech-tag">Ladder Logic</span>
+                        <span class="tech-tag">Automation</span>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-trophy"></i>
+                <div class="experience-card">
+                    <div class="experience-card-header">
+                        <div class="experience-icon"><i class="fas fa-trophy"></i></div>
+                        <span class="experience-date">Jan 2025 - Jan 2026</span>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Electrical Engineer</h3>
-                            <span class="timeline-date">Jan 2025 - Jan 2026</span>
-                        </div>
-                        <h4>Queen's Formula SAE</h4>
-                        <ul>
-                            <li>Led group designing 96-cell Li-ion battery pack achieving DMFEA 60, improving energy density by 10% and safety compliance</li>
-                            <li>Co-authored CAN 2.0B network spec (125 kbps) validated with Vector CANalyzer, reducing sensor latency by 30%</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span class="tech-tag">BMS</span>
-                            <span class="tech-tag">CAN Bus</span>
-                            <span class="tech-tag">Leadership</span>
-                        </div>
+                    <h3>Electrical Engineer</h3>
+                    <h4>Queen's Formula SAE</h4>
+                    <ul>
+                        <li>Led design of a 96-cell Li-ion battery pack, improving energy density by 10% while meeting safety requirements</li>
+                        <li>Co-authored CAN 2.0B network spec (125 kbps) validated with Vector CANalyzer, cut sensor latency by 30%</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">BMS</span>
+                        <span class="tech-tag">CAN Bus</span>
+                        <span class="tech-tag">Leadership</span>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-server"></i>
+                <div class="experience-card">
+                    <div class="experience-card-header">
+                        <div class="experience-icon"><i class="fas fa-briefcase"></i></div>
+                        <span class="experience-date">May 2024 - Aug 2024</span>
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Systems Architect</h3>
-                            <span class="timeline-date">Jan 2026 - Present</span>
-                        </div>
-                        <h4>Queen's High-Performance Computing</h4>
-                        <ul>
-                            <li>Building a 4.5 kW computer cluster for Student Cluster Competition</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HPC</span>
-                            <span class="tech-tag">Systems Design</span>
-                            <span class="tech-tag">Cluster Computing</span>
-                        </div>
+                    <h3>IT Specialist Intern</h3>
+                    <h4>Airbus Helicopters | Astana</h4>
+                    <ul>
+                        <li>Deployed tested and validated IP security camera system (15 units) performing functional verification, connectivity testing, and fault troubleshooting prior to operational handover</li>
+                        <li>Designed a Python + SQL automated tracking system using NFC badges, reducing manual logging and improving operational traceability</li>
+                        <li>Evaluated security system performance, identified constraints, and documented findings and recommendations for system deployment</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Network Systems</span>
+                        <span class="tech-tag">NFC</span>
                     </div>
                 </div>
             </div>
@@ -214,44 +211,64 @@
             <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fas fa-microchip"></i>
-                    <h3>Embedded Systems</h3>
-                    <p>Verilog, VHDL, Arduino, Raspberry Pi, FPGA, Microcontrollers</p>
+                    <div class="skill-card-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Hardware Design & Verification</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">KiCAD</span>
+                        <span class="skill-pill">LTSpice</span>
+                        <span class="skill-pill">Intel Quartus</span>
+                        <span class="skill-pill">SolidWorks</span>
+                        <span class="skill-pill">Power Electronics</span>
+                        <span class="skill-pill">BMS</span>
+                        <span class="skill-pill">Circuit Debugging</span>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Programming</h3>
-                    <p>C, C++, Python, MATLAB, Simulink, Java, Ladder Logic</p>
+                    <div class="skill-card-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Lab Instrumentation</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Oscilloscope</span>
+                        <span class="skill-pill">Logic Analyzer</span>
+                        <span class="skill-pill">Function Generator</span>
+                        <span class="skill-pill">VNA</span>
+                        <span class="skill-pill">Multimeter</span>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Power Electronics</h3>
-                    <p>Electrical Circuits, Power Electronics, Battery Management Systems</p>
+                    <div class="skill-card-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Embedded & Digital Systems</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Microcontrollers</span>
+                        <span class="skill-pill">Raspberry Pi</span>
+                        <span class="skill-pill">FPGA</span>
+                        <span class="skill-pill">Arduino</span>
+                        <span class="skill-pill">Verilog</span>
+                        <span class="skill-pill">VHDL</span>
+                        <span class="skill-pill">Schematic Capture</span>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-drafting-compass"></i>
-                    <h3>Design & CAD</h3>
-                    <p>LTSpice, KiCAD, SolidWorks, EPLAN P8, Intel Quartus</p>
+                    <div class="skill-card-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Industrial & Automation</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">PLC Programming</span>
+                        <span class="skill-pill">Ladder Logic</span>
+                        <span class="skill-pill">EPLAN P8</span>
+                        <span class="skill-pill">Sensor Integration</span>
+                        <span class="skill-pill">Data Acquisition</span>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>Automation</h3>
-                    <p>PLC Programming & Wiring, Industrial Automation, Control Systems</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Lab Equipment</h3>
-                    <p>Oscilloscope, Multimeter, Function Generator, Vector Network Analyzer, Logic Analyzer</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-git-alt"></i>
-                    <h3>Version Control</h3>
-                    <p>Git, GitHub, Collaborative Development</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-certificate"></i>
-                    <h3>Standards</h3>
-                    <p>IEEE, ISO, Health & Safety Training</p>
+                    <div class="skill-card-icon"><i class="fas fa-code"></i></div>
+                    <h3>Programming for Engineering</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">MATLAB</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">C/C++</span>
+                        <span class="skill-pill">Linux</span>
+                        <span class="skill-pill">Simulink</span>
+                        <span class="skill-pill">Git</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -260,20 +277,57 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Network Validation Toolkit</h3>
+                        <p>Developed a MATLAB-based network validation toolkit analyzing signal behavior, detecting anomalies, and automating performance reports to support engineering test decisions</p>
+                        <div class="project-tags">
+                            <span class="tag">MATLAB</span>
+                            <span class="tag">Data Automation</span>
+                            <span class="tag">Statistical Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Meechron/Network-Validation-Toolkit" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Feb 2026</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Multi-Agent Video Generation Pipeline</h3>
+                        <p>Architected a multi-agent orchestration system coordinating scene, motion, and interpolation modules, parallelized video generation workflows and improved processing efficiency</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Async Processing</span>
+                            <span class="tag">FILM Interpolation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Meechron/VidGenAI" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Feb 2026</a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-car"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Car Autopilot System</h3>
-                        <p>Developing self-driving algorithms using Raspberry Pi, integrating sensors, motors and AI for autonomous vehicle control</p>
+                        <h3>Car Autopilot</h3>
+                        <p>Developing autonomous navigation algorithms with sensor fusion on Raspberry Pi, enabling real-time decision making</p>
                         <div class="project-tags">
-                            <span class="tag">Raspberry Pi</span>
                             <span class="tag">Python</span>
-                            <span class="tag">Embedded Systems</span>
-                            <span class="tag">Sensor Integration</span>
+                            <span class="tag">Raspberry Pi</span>
+                            <span class="tag">Sensor Fusion</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Jan 2026</a>
@@ -283,18 +337,19 @@
 
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-battery-full"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Formula SAE Battery Pack</h3>
-                        <p>Leading design of 96-cell Li-ion battery pack achieving DMFEA 60, improving energy density by 10% and safety compliance for Queen's Formula SAE team</p>
+                        <h3>ML Activity Classifier</h3>
+                        <p>A machine learning classifier built to differentiate between jumping and walking activities using sensor data</p>
                         <div class="project-tags">
-                            <span class="tag">BMS</span>
-                            <span class="tag">Power Electronics</span>
-                            <span class="tag">Safety Design</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Classification</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Jan 2025</a>
+                            <a href="https://github.com/Meechron/ML-Activity-Classifier" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Feb 2026</a>
                         </div>
                     </div>
                 </div>
@@ -304,13 +359,12 @@
                         <i class="fas fa-signal"></i>
                     </div>
                     <div class="project-content">
-                        <h3>LoRa Telemetry System</h3>
-                        <p>Engineered LoRa telemetry system on Raspberry Pi to stream 10Hz battery pack temperatures, enabling early fault detection during testing</p>
+                        <h3>LoRa Telemetry</h3>
+                        <p>Engineered a wireless telemetry pipeline transmitting battery data at 10Hz for real-time monitoring and fault detection</p>
                         <div class="project-tags">
                             <span class="tag">Raspberry Pi</span>
                             <span class="tag">Python</span>
                             <span class="tag">LoRa</span>
-                            <span class="tag">Real-time Monitoring</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Apr 2025</a>
@@ -323,8 +377,8 @@
                         <i class="fas fa-plug"></i>
                     </div>
                     <div class="project-content">
-                        <h3>AC-DC Voltage Converter</h3>
-                        <p>Designed 120V→12V AC-DC low-voltage converter achieving 92% efficiency using LTSpice simulation and KiCAD PCB design</p>
+                        <h3>PCB Voltage Converter</h3>
+                        <p>Designed and debugged 120V→12V AC-DC low-voltage converter obtaining 92% efficiency using LTSpice and KiCAD</p>
                         <div class="project-tags">
                             <span class="tag">LTSpice</span>
                             <span class="tag">KiCAD</span>
@@ -342,33 +396,14 @@
                     </div>
                     <div class="project-content">
                         <h3>Air Quality Control System</h3>
-                        <p>Built air quality monitoring system using Arduino allowing CO2 and PM2.5 detection in real-time with 95% accuracy</p>
+                        <p>Built an air quality monitoring system using Arduino, enabling real-time CO₂ and PM2.5 detection with 95% accuracy</p>
                         <div class="project-tags">
-                            <span class="tag">Arduino</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">Sensors</span>
+                            <span class="tag">Arduino UNO</span>
+                            <span class="tag">System Integration</span>
                             <span class="tag">IoT</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Oct 2024</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>CAN 2.0B Network Architecture</h3>
-                        <p>Co-authored CAN 2.0B network specification (125 kbps) validated with Vector CANalyzer, reducing sensor latency by 30% for Formula SAE vehicle</p>
-                        <div class="project-tags">
-                            <span class="tag">CAN Bus</span>
-                            <span class="tag">Automotive</span>
-                            <span class="tag">Systems Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-info-circle"></i> Sep 2025</a>
                         </div>
                     </div>
                 </div>
@@ -410,7 +445,7 @@
                         <i class="fab fa-github"></i>
                         <div>
                             <h3>GitHub</h3>
-                            <a href="https://github.com/meechron" target="_blank">View my code</a>
+                            <a href="https://github.com/Meechron" target="_blank">View my code</a>
                         </div>
                     </div>
                 </div>
@@ -435,7 +470,7 @@
         <div class="container">
             <p>&copy; 2026 Amirkhan Mirzalimov. Built with passion and code.</p>
             <div class="social-links">
-                <a href="https://github.com/meechron" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/Meechron" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/amir-mirzalimov/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:amirkhan22888@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
